@@ -8,15 +8,22 @@ export const HistoryContainer = styled.main`
   display: flex;
   flex-direction: column;
 
+  width: 100%;
+
   h1 {
     font-size: 1.5rem;
     color: ${(props) => props.theme['gray-100']};
+  }
+
+  @media (max-width: 1200px) {
+    padding: 0;
   }
 `
 export const HistoryList = styled.div`
   flex: 1;
   overflow: auto;
   margin-top: 2rem;
+  width: 100%;
 
   table {
     width: 100%;
@@ -59,6 +66,18 @@ export const HistoryList = styled.div`
       }
     }
   }
+`
+
+export const DataStart = styled.td`
+  min-width: 200px;
+`
+
+export const DataDuration = styled.td`
+  min-width: 120px;
+`
+
+export const DataStatus = styled.td`
+  min-width: 180px;
 `
 
 interface StatusProps {

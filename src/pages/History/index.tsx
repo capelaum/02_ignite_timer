@@ -1,4 +1,11 @@
-import { HistoryContainer, HistoryList, Status } from './styles'
+import {
+  DataDuration,
+  DataStart,
+  DataStatus,
+  HistoryContainer,
+  HistoryList,
+  Status
+} from './styles'
 
 export function History() {
   return (
@@ -18,16 +25,16 @@ export function History() {
           <tbody>
             <tr>
               <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>Há cerca de 2 meses</td>
-              <td>
+              <DataDuration>20 minutos</DataDuration>
+              <DataStart>Há cerca de 2 meses</DataStart>
+              <DataStatus>
                 <Status statusColor="green">Concluído</Status>
-              </td>
+              </DataStatus>
             </tr>
             <tr>
               <td>Tarefa</td>
               <td>20 minutos</td>
-              <td>Há cerca de 2 meses</td>
+              <DataStart>Há cerca de 2 meses</DataStart>
               <td>
                 <Status statusColor="yellow">Em andamento</Status>
               </td>
@@ -35,7 +42,7 @@ export function History() {
             <tr>
               <td>Tarefa</td>
               <td>20 minutos</td>
-              <td>Há cerca de 2 meses</td>
+              <DataStart>Há cerca de 2 meses</DataStart>
               <td>
                 <Status statusColor="red">Interrompido</Status>
               </td>
@@ -43,7 +50,7 @@ export function History() {
             <tr>
               <td>Tarefa</td>
               <td>20 minutos</td>
-              <td>Há cerca de 2 meses</td>
+              <DataStart>Há cerca de 2 meses</DataStart>
               <td>
                 <Status statusColor="green">Concluído</Status>
               </td>
@@ -51,7 +58,7 @@ export function History() {
             <tr>
               <td>Tarefa</td>
               <td>20 minutos</td>
-              <td>Há cerca de 2 meses</td>
+              <DataStart>Há cerca de 2 meses</DataStart>
               <td>
                 <Status statusColor="yellow">Em andamento</Status>
               </td>
