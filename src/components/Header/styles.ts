@@ -4,6 +4,8 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  min-width: 45rem;
 
   margin-bottom: 3.5rem;
 
@@ -34,5 +36,9 @@ export const HeaderContainer = styled.header`
         color: ${(props) => props.theme['green-500']};
       }
     }
+  }
+
+  @media (max-width: 1200px) {
+    min-width: 100%;
   }
 `

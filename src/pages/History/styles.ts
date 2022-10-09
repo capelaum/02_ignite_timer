@@ -3,24 +3,16 @@ import styled from 'styled-components'
 export const HistoryContainer = styled.main`
   flex: 1;
 
-  padding: 3.5rem;
-
   display: flex;
   flex-direction: column;
-
-  width: 100%;
+  align-self: stretch;
 
   h1 {
     font-size: 1.5rem;
     color: ${(props) => props.theme['gray-100']};
   }
-
-  @media (max-width: 1200px) {
-    padding: 0;
-  }
 `
 export const HistoryList = styled.div`
-  flex: 1;
   overflow: auto;
   margin-top: 2rem;
   width: 100%;

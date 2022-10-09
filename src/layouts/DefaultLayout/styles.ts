@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const LayoutContainer = styled.div`
-  max-width: 74rem; // 1184px
+  max-width: 74rem;
   margin: 5rem 0;
   padding: 2.5rem 10rem;
 
@@ -10,6 +10,7 @@ export const LayoutContainer = styled.div`
 
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @media (max-width: 1200px) {
     padding: 2.5rem 1.4rem;

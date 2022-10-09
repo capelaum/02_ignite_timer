@@ -17,20 +17,20 @@ export const CountdownContainer = styled.div`
 
   @media (max-width: 768px) {
     font-size: 6rem;
-    line-height: 5rem;
+    line-height: 4rem;
     gap: 0.75rem;
   }
 
   @media (max-width: 576px) {
     font-size: 4rem;
-    line-height: 3rem;
+    line-height: 2rem;
     gap: 0.5rem;
   }
 
   @media (max-width: 480px) {
-    gap: 0.25rem;
-    font-size: 3rem;
-    line-height: 2rem;
+    gap: 0.5rem;
+    font-size: 2.25rem;
+    line-height: 1rem;
   }
 `
 
@@ -46,5 +46,11 @@ export const Separator = styled.div`
 
   @media (max-width: 768px) {
     font-size: 6rem;
+    width: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 4.25rem;
+    width: 1rem;
   }
 `
