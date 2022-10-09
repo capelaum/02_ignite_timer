@@ -6,11 +6,28 @@ import { CountdownContainer, Separator } from './styles'
 export function Countdown() {
   const {
     activeCycle,
-    minutes,
-    seconds,
+    amountSecondsPassed,
     setSecondsPassed,
     markCurrentCycleAsFinished
   } = useCyclesContext()
+
+  const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0
+  const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0
+  const currentMinutes = Math.floor(currentSeconds / 60)
+  const currentSecondsLeft = currentSeconds % 60
+
+  const minutes = String(currentMinutes).padStart(2, '0')
+  const seconds = String(currentSecondsLeft).padStart(2, '0')
+
+  useEffect(() => {
+    if (activeCycle) {
+      document.title = `${minutes}:${seconds}`
+    }
+
+    if (!activeCycle) {
+      document.title = 'Ignite Timer'
+    }
+  }, [activeCycle, minutes, seconds])
 
   useEffect(() => {
     let interval: number
