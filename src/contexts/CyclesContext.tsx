@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useContext, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState
+} from 'react'
 
 interface CreateCycleData {
   task: string
@@ -19,6 +25,8 @@ interface CyclesContextData {
   activeCycle: Cycle | undefined
   activeCycleId: string | null
   amountSecondsPassed: number
+  minutes: string
+  seconds: string
   markCurrentCycleAsFinished: () => void
   setSecondsPassed: (seconds: number) => void
   createNewCycle: (data: CreateCycleData) => void
@@ -39,6 +47,24 @@ export function CyclesContextProvider({
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
 
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
+
+  const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0
+  const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0
+  const currentMinutes = Math.floor(currentSeconds / 60)
+  const currentSecondsLeft = currentSeconds % 60
+
+  const minutes = String(currentMinutes).padStart(2, '0')
+  const seconds = String(currentSecondsLeft).padStart(2, '0')
+
+  useEffect(() => {
+    if (activeCycle) {
+      document.title = `${minutes}:${seconds}`
+    }
+
+    if (!activeCycle) {
+      document.title = 'Ignite Timer'
+    }
+  }, [activeCycle, minutes, seconds])
 
   function setSecondsPassed(seconds: number) {
     setAmountSecondsPassed(seconds)
@@ -100,6 +126,8 @@ export function CyclesContextProvider({
         activeCycle,
         activeCycleId,
         amountSecondsPassed,
+        minutes,
+        seconds,
         setSecondsPassed,
         createNewCycle,
         interruptCurrentCycle,
