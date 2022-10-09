@@ -1,3 +1,4 @@
+import { useCyclesContext } from '../../contexts/CyclesContext'
 import {
   DataDuration,
   DataStart,
@@ -8,6 +9,9 @@ import {
 } from './styles'
 
 export function History() {
+  const { cycles } = useCyclesContext()
+  console.log('🚀 ~ cycles', cycles)
+
   return (
     <HistoryContainer>
       <h1>Meu histórico</h1>
