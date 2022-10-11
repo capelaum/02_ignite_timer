@@ -20,7 +20,7 @@ export const AppContainer = styled.div<{ appTheme: AppTheme }>`
 
 export const LayoutContainer = styled.div<{ appTheme: AppTheme }>`
   max-width: 74rem;
-  margin-top: 7.5rem;
+  margin: 7.5rem 0;
   padding: 2.5rem 10rem;
   border-radius: 8px;
 
