@@ -1,5 +1,6 @@
 import { formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
+import { useAppTheme } from '../../contexts/AppThemeContext'
 import { useCyclesContext } from '../../contexts/CyclesContext'
 
 import {
@@ -12,13 +13,14 @@ import {
 } from './styles'
 
 export function History() {
+  const { appTheme } = useAppTheme()
   const { cycles } = useCyclesContext()
 
   return (
-    <HistoryContainer>
+    <HistoryContainer appTheme={appTheme}>
       <h1>Meu histórico</h1>
 
-      <HistoryList>
+      <HistoryList appTheme={appTheme}>
         <table>
           <thead>
             <tr>

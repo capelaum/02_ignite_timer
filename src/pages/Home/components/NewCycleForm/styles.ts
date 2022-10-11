@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { AppTheme } from '../../../../contexts/AppThemeContext'
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.div<{ appTheme: AppTheme }>`
   width: 100%;
 
   display: flex;
@@ -9,7 +10,10 @@ export const FormContainer = styled.div`
   gap: 0.5rem;
   flex-wrap: wrap;
 
-  color: ${(props) => props.theme['gray-100']};
+  color: ${(props) =>
+    props.appTheme === 'light'
+      ? props.theme['gray-900']
+      : props.theme['gray-100']};
 
   font-weight: bold;
   font-size: 1.125rem;
@@ -19,7 +23,7 @@ export const FormContainer = styled.div`
   }
 `
 
-const BaseInput = styled.input`
+const BaseInput = styled.input<{ appTheme: AppTheme }>`
   background: transparent;
   height: 2.5rem;
   padding: 0 0.5rem;
@@ -27,7 +31,10 @@ const BaseInput = styled.input`
   border: none;
   border-bottom: 2px solid ${(props) => props.theme['gray-500']};
 
-  color: ${(props) => props.theme['gray-100']};
+  color: ${(props) =>
+    props.appTheme === 'light'
+      ? props.theme['gray-600']
+      : props.theme['gray-100']};
 
   font-weight: bold;
   font-size: 1.125rem;

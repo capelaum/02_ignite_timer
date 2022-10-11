@@ -57,12 +57,20 @@ export function Home() {
         <Countdown />
 
         {activeCycle ? (
-          <StopCountdownButton type="button" onClick={interruptCurrentCycle}>
+          <StopCountdownButton
+            type="button"
+            onClick={interruptCurrentCycle}
+            title="Interromper Timer."
+          >
             <HandPalm size={24} />
             Interromper
           </StopCountdownButton>
         ) : (
-          <StartCountdownButton disabled={isSubmitDisabled} type="submit">
+          <StartCountdownButton
+            disabled={isSubmitDisabled}
+            type="submit"
+            title="Preencha o nome e a duração antes de começar."
+          >
             <Play size={24} />
             Começar
           </StartCountdownButton>

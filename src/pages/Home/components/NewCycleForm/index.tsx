@@ -1,16 +1,19 @@
 import { useFormContext } from 'react-hook-form'
+import { useAppTheme } from '../../../../contexts/AppThemeContext'
 
 import { useCyclesContext } from '../../../../contexts/CyclesContext'
 import { FormContainer, MinutesAmountInput, TaskInput } from './styles'
 
 export function NewCycleForm() {
+  const { appTheme } = useAppTheme()
   const { activeCycle } = useCyclesContext()
   const { register } = useFormContext()
 
   return (
-    <FormContainer>
+    <FormContainer appTheme={appTheme}>
       <label htmlFor="task">Vou trabalhar em</label>
       <TaskInput
+        appTheme={appTheme}
         id="task"
         type="text"
         list="task-suggestions"
@@ -27,6 +30,7 @@ export function NewCycleForm() {
 
       <label htmlFor="minutesAmount">durante</label>
       <MinutesAmountInput
+        appTheme={appTheme}
         id="minutesAmount"
         type="number"
         placeholder="00"

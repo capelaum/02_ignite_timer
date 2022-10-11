@@ -1,9 +1,12 @@
 import { differenceInSeconds } from 'date-fns'
 import { useEffect } from 'react'
+import { useAppTheme } from '../../../../contexts/AppThemeContext'
 import { useCyclesContext } from '../../../../contexts/CyclesContext'
 import { CountdownContainer, Separator } from './styles'
 
 export function Countdown() {
+  const { appTheme } = useAppTheme()
+
   const {
     activeCycle,
     amountSecondsPassed,
@@ -53,7 +56,7 @@ export function Countdown() {
   }, [activeCycle, markCurrentCycleAsFinished, setSecondsPassed])
 
   return (
-    <CountdownContainer>
+    <CountdownContainer appTheme={appTheme}>
       <span>{minutes[0]}</span>
       <span>{minutes[1]}</span>
 
