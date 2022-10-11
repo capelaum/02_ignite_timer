@@ -14,13 +14,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme['gray-900']};
     color: ${(props) => props.theme['gray-300']};
+    background: ${(props) => props.theme['gray-900']};
+
     -webkit-font-smoothing: antialiased;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     min-height: 100vh;
   }

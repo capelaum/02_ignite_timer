@@ -55,7 +55,7 @@ export function CyclesContextProvider({
       }
 
       return {
-        cycles: [],
+        cycles: [] as Cycle[],
         activeCycleId: null
       }
     }
